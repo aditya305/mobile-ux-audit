@@ -85,13 +85,13 @@ No agent needed - the CLI calls the Claude API directly with the same playbook, 
 prompt caching so the playbook is billed once and read from cache on every batch.
 
 ```bash
-npm install && npm link          # or: npx mobile-ux-audit (once published)
+# no install needed:
 export ANTHROPIC_API_KEY=...     # or `ant auth login`
 
-mobile-ux-audit ./my-app                    # audit -> ledger + report + exit code
-mobile-ux-audit ./my-app --dry-run          # inventory + batch plan, no API calls
-mobile-ux-audit ./my-app --fail-on P1       # CI gate: exit 1 on P0/P1 findings
-mobile-ux-audit diff --baseline shots/v1 --current shots/v2 --analyze
+npx mobile-ux-audit ./my-app                # audit -> ledger + report + exit code
+npx mobile-ux-audit ./my-app --dry-run      # inventory + batch plan, no API calls
+npx mobile-ux-audit ./my-app --fail-on P1   # CI gate: exit 1 on P0/P1 findings
+npx mobile-ux-audit diff --baseline shots/v1 --current shots/v2 --analyze
                                             # screenshot-diff regression mode
 ```
 
@@ -118,7 +118,7 @@ mobile-ux-audit diff --baseline shots/v1 --current shots/v2 --analyze
 - [x] Standalone CLI (`mobile-ux-audit`) calling the Claude API, with prompt caching + CI exit codes.
 - [x] Screenshot-diff regression mode (pixelmatch + optional Claude vision verdicts).
 - [x] Config file (`ux-audit.config.json`) for severity overrides and enabled categories.
-- [ ] Publish to npm (`npx mobile-ux-audit`).
+- [x] Published to npm: [`mobile-ux-audit`](https://www.npmjs.com/package/mobile-ux-audit) (`npx mobile-ux-audit`).
 - [ ] GitHub Action wrapper.
 
 ## License
