@@ -58,11 +58,11 @@ Install as a skill, then run `/audit-ux` in any mobile project.
 
 **Global (all your projects):**
 ```bash
-git clone https://github.com/<you>/mobile-ux-audit ~/.claude/skills/audit-ux
+git clone https://github.com/aditya305/mobile-ux-audit ~/.claude/skills/audit-ux
 ```
 **Or per-project:**
 ```bash
-git clone https://github.com/<you>/mobile-ux-audit .claude/skills/audit-ux
+git clone https://github.com/aditya305/mobile-ux-audit .claude/skills/audit-ux
 ```
 Then in Claude Code:
 ```
