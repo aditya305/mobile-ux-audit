@@ -1,0 +1,21 @@
+{
+  "name": "aditya305",
+  "description": "Skills and tools by Aditya Sutar",
+  "owner": {
+    "name": "Aditya Sutar"
+  },
+  "plugins": [
+    {
+      "name": "mobile-ux-audit",
+      "source": "./",
+      "description": "Mobile UX audit: prioritized evidence-backed findings for any mobile stack, with batch mode, fixes, tickets, and re-audit diffing.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Aditya Sutar"
+      },
+      "homepage": "https://github.com/aditya305/mobile-ux-audit#readme",
+      "repository": "https://github.com/aditya305/mobile-ux-audit",
+      "license": "MIT"
+    }
+  ]
+}

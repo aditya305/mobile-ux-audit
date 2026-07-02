@@ -52,18 +52,21 @@ mobile-ux-audit/
     └── example-report.md           # what the output looks like
 ```
 
-## Use it with Claude Code (published skill)
+## Use it with Claude Code
 
-Install as a skill, then run `/audit-ux` in any mobile project.
+**Install as a plugin (recommended)** — inside Claude Code:
+```
+/plugin marketplace add aditya305/mobile-ux-audit
+/plugin install mobile-ux-audit@aditya305
+```
+Then invoke with `/mobile-ux-audit:audit-ux` in any mobile project.
 
-**Global (all your projects):**
+**Or install manually as a personal skill:**
 ```bash
 git clone https://github.com/aditya305/mobile-ux-audit ~/.claude/skills/audit-ux
 ```
-**Or per-project:**
-```bash
-git clone https://github.com/aditya305/mobile-ux-audit .claude/skills/audit-ux
-```
+(per-project: clone into `.claude/skills/audit-ux` instead)
+
 Then in Claude Code:
 ```
 /audit-ux                       # report only

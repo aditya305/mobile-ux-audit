@@ -3,13 +3,17 @@ name: audit-ux
 description: Audit the UX of a mobile app (React Native/Expo, Flutter, SwiftUI/UIKit, Jetpack Compose/XML, Kotlin Multiplatform, .NET MAUI/Xamarin, Ionic/Capacitor/Cordova, PWA) and optionally fix the issues. Use when the user wants to review, audit, critique, or improve the UX/UI, accessibility, usability, visual polish, loading/empty/error states, tap targets, or platform fit of a mobile app — from source code, screenshots, or Figma designs.
 ---
 
-<!-- Root copy for git-clone installs (~/.claude/skills/audit-ux/SKILL.md).
-     Keep in sync with skills/audit-ux/SKILL.md (the plugin copy). -->
+<!-- Plugin copy of the root SKILL.md — keep the two in sync. Paths below are relative
+     to the PLUGIN ROOT (two levels up from this file). -->
 
 # Mobile UX Audit
 
 Audit a mobile app's user experience and, when asked, fix the issues. This skill is a thin
 wrapper: the full method lives in the portable playbook so it stays reusable outside Claude.
+
+All referenced files live at the plugin root — from this skill file that is `../../`
+(e.g. `../../playbook/ux-audit-playbook.md`). If a relative path misses, locate the file
+by name with a glob.
 
 ## How to run
 

@@ -1,0 +1,12 @@
+{
+  "name": "mobile-ux-audit",
+  "description": "Audit the UX of any mobile app (RN/Expo, Flutter, SwiftUI/UIKit, Compose, KMP, MAUI, Ionic, PWA): prioritized evidence-backed findings, batch mode for large apps, fixes, tickets, re-audit diffing.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Aditya Sutar"
+  },
+  "homepage": "https://github.com/aditya305/mobile-ux-audit#readme",
+  "repository": "https://github.com/aditya305/mobile-ux-audit",
+  "license": "MIT",
+  "keywords": ["ux", "audit", "mobile", "accessibility", "react-native", "flutter"]
+}
