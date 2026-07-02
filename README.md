@@ -1,17 +1,17 @@
 # 📱 Mobile UX Audit
 
 An **agent-agnostic UX audit toolkit** for mobile apps. Point it at a mobile codebase (or
-screenshots / Figma designs) and it produces a **prioritized, evidence-backed UX audit** — and,
+screenshots / Figma designs) and it produces a **prioritized, evidence-backed UX audit** - and,
 on request, **fixes the issues**.
 
 Supports **React Native / Expo, Flutter, SwiftUI / UIKit, Jetpack Compose / XML,
-Kotlin Multiplatform, .NET MAUI / Xamarin, Ionic / Capacitor / Cordova, and PWAs** —
+Kotlin Multiplatform, .NET MAUI / Xamarin, Ionic / Capacitor / Cordova, and PWAs** -
 with webview-specific checks for the last two.
 
 > **Design principle:** the audit logic lives in one portable Markdown "brain"
 > ([`playbook/ux-audit-playbook.md`](playbook/ux-audit-playbook.md)). Tool-specific wrappers
 > (`SKILL.md`, `AGENTS.md`) are thin and just tell each tool *when* to load the brain. So this
-> works with Claude today and any other agent tomorrow — with zero changes to the logic.
+> works with Claude today and any other agent tomorrow - with zero changes to the logic.
 
 ## What it checks
 Touch targets & interaction · loading/empty/error states · accessibility (labels, contrast,
@@ -24,14 +24,14 @@ needs-runtime, with a how-to-verify hint), an **effort estimate**, an **evidence
 and a full [example report](examples/example-report.md).
 
 ## Built for real dev workflows
-- **Batch mode** — large apps are audited in screen batches with findings flushed to a disk
+- **Batch mode** - large apps are audited in screen batches with findings flushed to a disk
   ledger, so token cost stays flat as the app grows (playbook §6).
-- **Structure trace** — optionally reads the stack's routing config (and GraphQL schema if
+- **Structure trace** - optionally reads the stack's routing config (and GraphQL schema if
   present) to order batches by real user flow and catch orphan/dead-end screens (Step 2.5).
-- **Re-audit diffing** — run it again next sprint; the report leads with
+- **Re-audit diffing** - run it again next sprint; the report leads with
   `Δ since last audit: 4 fixed · 2 new · 1 regressed` (playbook §6.5).
-- **Reviewable fixes** — `--fix` lands one commit/diff per finding, never a merged blob.
-- **Ticket export** — `--tickets` emits paste-ready GitHub/Jira issue blocks for every P0/P1.
+- **Reviewable fixes** - `--fix` lands one commit/diff per finding, never a merged blob.
+- **Ticket export** - `--tickets` emits paste-ready GitHub/Jira issue blocks for every P0/P1.
 
 ## Repo layout
 ```
@@ -54,7 +54,7 @@ mobile-ux-audit/
 
 ## Use it with Claude Code
 
-**Install as a plugin (recommended)** — inside Claude Code:
+**Install as a plugin (recommended)** - inside Claude Code:
 ```
 /plugin marketplace add aditya305/mobile-ux-audit
 /plugin install mobile-ux-audit@aditya305
@@ -81,7 +81,7 @@ fixed, what's new, and what regressed.
 
 ## Use it as a standalone CLI (CI-ready)
 
-No agent needed — the CLI calls the Claude API directly with the same playbook, using
+No agent needed - the CLI calls the Claude API directly with the same playbook, using
 prompt caching so the playbook is billed once and read from cache on every batch.
 
 ```bash
@@ -95,11 +95,11 @@ mobile-ux-audit diff --baseline shots/v1 --current shots/v2 --analyze
                                             # screenshot-diff regression mode
 ```
 
-- **Batched with prompt caching** — flat peak cost regardless of app size.
-- **Re-audit diffing** — reruns lead with `Δ: fixed / new / still open`.
-- **`ux-audit.config.json`** — tune model, categories, severity overrides, ignore globs,
+- **Batched with prompt caching** - flat peak cost regardless of app size.
+- **Re-audit diffing** - reruns lead with `Δ: fixed / new / still open`.
+- **`ux-audit.config.json`** - tune model, categories, severity overrides, ignore globs,
   batch size, and the `failOn` gate (see `ux-audit.config.example.json`).
-- **Screenshot-diff mode** — pixelmatch baseline vs current; `--analyze` sends changed
+- **Screenshot-diff mode** - pixelmatch baseline vs current; `--analyze` sends changed
   pairs to Claude vision for a regression verdict; `--fail-on-regression` gates CI.
 
 ## Use it with any other agent
@@ -107,7 +107,7 @@ mobile-ux-audit diff --baseline shots/v1 --current shots/v2 --analyze
   `playbook/` + `references/`). The agent reads `AGENTS.md` and follows the playbook.
 - **Any LLM / manual:** attach or paste
   [`playbook/ux-audit-playbook.md`](playbook/ux-audit-playbook.md) and say
-  "audit the UX of this app following this playbook." That's it — the playbook is self-contained.
+  "audit the UX of this app following this playbook." That's it - the playbook is self-contained.
 
 ## Roadmap
 - [x] Batch mode with disk ledger (flat token cost on large apps).
@@ -122,4 +122,4 @@ mobile-ux-audit diff --baseline shots/v1 --current shots/v2 --analyze
 - [ ] GitHub Action wrapper.
 
 ## License
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
