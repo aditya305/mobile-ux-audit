@@ -1,0 +1,36 @@
+{
+  "name": "mobile-ux-audit",
+  "version": "0.1.0",
+  "description": "Portable mobile UX audit: batched, evidence-backed, CI-ready. Powered by the Claude API.",
+  "type": "module",
+  "bin": {
+    "mobile-ux-audit": "cli/index.js"
+  },
+  "files": [
+    "cli/",
+    "playbook/",
+    "references/",
+    "templates/",
+    "ux-audit.config.example.json"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0"
+  },
+  "keywords": [
+    "ux",
+    "audit",
+    "mobile",
+    "accessibility",
+    "react-native",
+    "flutter",
+    "ci",
+    "claude"
+  ],
+  "author": "Aditya Sutar",
+  "license": "MIT"
+}

@@ -1,0 +1,47 @@
+{
+  "$schema-note": "Copy to ux-audit.config.json in your app repo. Every field is optional — these are the defaults.",
+
+  "model": "claude-opus-4-8",
+  "effort": "high",
+
+  "batchSize": 6,
+  "maxTokensPerBatch": 32000,
+
+  "categories": {
+    "touch-targets": true,
+    "state-coverage": true,
+    "accessibility": true,
+    "visual-hierarchy": true,
+    "responsiveness": true,
+    "forms": true,
+    "navigation": true,
+    "feedback-motion": true,
+    "content-copy": true,
+    "platform-fit": true
+  },
+
+  "severityOverrides": {
+    "_comment": "Optionally re-rank categories for your product, e.g. force all accessibility findings to at least P1",
+    "accessibility": "P1"
+  },
+
+  "failOn": "P0",
+  "_failOn-note": "CI gate: exit code 1 if any finding at or above this severity. One of P0 | P1 | P2 | P3 | none.",
+
+  "ignore": [
+    "**/node_modules/**",
+    "**/build/**",
+    "**/dist/**",
+    "**/Pods/**",
+    "**/.dart_tool/**",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/__tests__/**"
+  ],
+
+  "screens": [],
+  "_screens-note": "Limit scope to specific screen names/paths. Empty = audit everything.",
+
+  "ledgerPath": "ux-audit-findings.md",
+  "reportPath": "ux-audit-report.md"
+}

@@ -1,0 +1,5 @@
+node_modules/
+package-lock.json
+ux-audit-findings.md
+ux-audit-report.md
+ux-diff/
