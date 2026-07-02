@@ -32,5 +32,13 @@
     "claude"
   ],
   "author": "Aditya Sutar",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aditya305/mobile-ux-audit.git"
+  },
+  "homepage": "https://github.com/aditya305/mobile-ux-audit#readme",
+  "bugs": {
+    "url": "https://github.com/aditya305/mobile-ux-audit/issues"
+  }
 }
