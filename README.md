@@ -14,22 +14,22 @@ with webview-specific checks for the last two.
 > works with Claude today and any other agent tomorrow - with zero changes to the logic.
 
 ## What it checks
-Touch targets & interaction · loading/empty/error states · accessibility (labels, contrast,
-dynamic type) · visual hierarchy & spacing · safe areas & responsiveness · forms & input ·
-navigation & flow · feedback & motion · content & copy · iOS HIG / Android Material platform fit.
+Touch targets & interaction, loading/empty/error states, accessibility (labels, contrast,
+dynamic type), visual hierarchy & spacing, safe areas & responsiveness, forms & input,
+navigation & flow, feedback & motion, content & copy, iOS HIG / Android Material platform fit.
 
-Each finding gets a **severity (P0–P3)**, a **confidence tag** (verified / likely /
+Each finding gets a **severity (P0-P3)**, a **confidence tag** (verified / likely /
 needs-runtime, with a how-to-verify hint), an **effort estimate**, an **evidence pointer
 (`file:line`)**, and a **concrete fix**. See [`references/heuristics.md`](references/heuristics.md)
 and a full [example report](examples/example-report.md).
 
 ## Built for real dev workflows
 - **Batch mode** - large apps are audited in screen batches with findings flushed to a disk
-  ledger, so token cost stays flat as the app grows (playbook §6).
+  ledger, so token cost stays flat as the app grows (playbook section 6).
 - **Structure trace** - optionally reads the stack's routing config (and GraphQL schema if
   present) to order batches by real user flow and catch orphan/dead-end screens (Step 2.5).
 - **Re-audit diffing** - run it again next sprint; the report leads with
-  `Δ since last audit: 4 fixed · 2 new · 1 regressed` (playbook §6.5).
+  `Delta since last audit: 4 fixed, 2 new, 1 regressed` (playbook section 6.5).
 - **Reviewable fixes** - `--fix` lands one commit/diff per finding, never a merged blob.
 - **Ticket export** - `--tickets` emits paste-ready GitHub/Jira issue blocks for every P0/P1.
 
@@ -41,7 +41,7 @@ mobile-ux-audit/
 ├── cli/                            # standalone CLI (audit + screenshot-diff), Claude API
 ├── ux-audit.config.example.json    # per-repo config: categories, failOn gate, ignore globs
 ├── playbook/
-│   └── ux-audit-playbook.md        # ← the portable brain (the real logic)
+│   └── ux-audit-playbook.md        # <- the portable brain (the real logic)
 ├── references/
 │   ├── stack-detection.md          # detect framework + fix cheatsheet + verify hints
 │   ├── heuristics.md               # Nielsen + mobile principles + a11y + anti-patterns
@@ -88,7 +88,7 @@ prompt caching so the playbook is billed once and read from cache on every batch
 npm install && npm link          # or: npx mobile-ux-audit (once published)
 export ANTHROPIC_API_KEY=...     # or `ant auth login`
 
-mobile-ux-audit ./my-app                    # audit → ledger + report + exit code
+mobile-ux-audit ./my-app                    # audit -> ledger + report + exit code
 mobile-ux-audit ./my-app --dry-run          # inventory + batch plan, no API calls
 mobile-ux-audit ./my-app --fail-on P1       # CI gate: exit 1 on P0/P1 findings
 mobile-ux-audit diff --baseline shots/v1 --current shots/v2 --analyze
@@ -96,7 +96,7 @@ mobile-ux-audit diff --baseline shots/v1 --current shots/v2 --analyze
 ```
 
 - **Batched with prompt caching** - flat peak cost regardless of app size.
-- **Re-audit diffing** - reruns lead with `Δ: fixed / new / still open`.
+- **Re-audit diffing** - reruns lead with `Delta: fixed / new / still open`.
 - **`ux-audit.config.json`** - tune model, categories, severity overrides, ignore globs,
   batch size, and the `failOn` gate (see `ux-audit.config.example.json`).
 - **Screenshot-diff mode** - pixelmatch baseline vs current; `--analyze` sends changed
